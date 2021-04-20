@@ -1,0 +1,265 @@
+AppleIntelInfo.kext v2.9 Copyright © 2012-2017 Pike R. Alpha. All rights reserved.
+
+Settings:
+------------------------------------------
+logMSRs..................................: 1
+logIGPU..................................: 1
+logCStates...............................: 1
+logIPGStyle..............................: 1
+InitialTSC...............................: 0x114f3b6b113 (62 MHz)
+MWAIT C-States...........................: 286531872
+
+Processor Brandstring....................: Intel(R) Core(TM) i5-4250U CPU @ 1.30GHz
+
+Processor Signature..................... : 0x40651
+------------------------------------------
+ - Family............................... : 6
+ - Stepping............................. : 1
+ - Model................................ : 0x45 (69)
+
+Model Specific Registers (MSRs)
+------------------------------------------
+
+MSR_IA32_PLATFORM_ID.............(0x17)  : 0x18000000000000
+------------------------------------------
+ - Processor Flags...................... : 6
+
+MSR_CORE_THREAD_COUNT............(0x35)  : 0x20004
+------------------------------------------
+ - Core Count........................... : 2
+ - Thread Count......................... : 4
+
+MSR_PLATFORM_INFO................(0xCE)  : 0x8083DF3011300
+------------------------------------------
+ - Maximum Non-Turbo Ratio.............. : 0x13 (1900 MHz)
+ - Ratio Limit for Turbo Mode........... : 1 (programmable)
+ - TDP Limit for Turbo Mode............. : 1 (programmable)
+ - Low Power Mode Support............... : 1 (LPM supported)
+ - Number of ConfigTDP Levels........... : 2 (additional TDP level(s) available)
+ - Maximum Efficiency Ratio............. : 8
+ - Minimum Operating Ratio.............. : 8
+
+MSR_PMG_CST_CONFIG_CONTROL.......(0xE2)  : 0x1E008408
+------------------------------------------
+ - I/O MWAIT Redirection Enable......... : 1 (enabled, IO read of MSR(0xE4) mapped to MWAIT)
+ - CFG Lock............................. : 1 (MSR locked until next reset)
+ - C3 State Auto Demotion............... : 1 (enabled)
+ - C1 State Auto Demotion............... : 1 (enabled)
+ - C3 State Undemotion.................. : 1 (enabled)
+ - C1 State Undemotion.................. : 1 (enabled)
+ - Package C-State Auto Demotion........ : 0 (disabled/unsupported)
+ - Package C-State Undemotion........... : 0 (disabled/unsupported)
+
+MSR_PMG_IO_CAPTURE_BASE..........(0xE4)  : 0x1814
+------------------------------------------
+ - LVL_2 Base Address................... : 0x1814
+ - C-state Range........................ : 0 (C3 is the max C-State to include)
+
+IA32_MPERF.......................(0xE7)  : 0x272572A731
+IA32_APERF.......................(0xE8)  : 0x2A3FE0D122
+
+MSR_FLEX_RATIO...................(0x194) : 0x0
+------------------------------------------
+
+MSR_IA32_PERF_STATUS.............(0x198) : 0x1D1A00001700
+------------------------------------------
+ - Current Performance State Value...... : 0x1700 (2300 MHz)
+
+MSR_IA32_PERF_CONTROL............(0x199) : 0x1A00
+------------------------------------------
+ - Target performance State Value....... : 0x1A00 (2600 MHz)
+ - Intel Dynamic Acceleration........... : 0 (IDA engaged)
+
+IA32_CLOCK_MODULATION............(0x19A) : 0x0
+
+IA32_THERM_INTERRUPT.............(0x19B) : 0x10
+------------------------------------------
+ - High-Temperature Interrupt Enable.... : 0 (disabled)
+ - Low-Temperature Interrupt Enable..... : 0 (disabled)
+ - PROCHOT# Interrupt Enable............ : 0 (disabled)
+ - FORCEPR# Interrupt Enable............ : 0 (disabled)
+ - Critical Temperature Interrupt Enable : 1 (enabled)
+ - Threshold #1 Value................... : 0
+ - Threshold #1 Interrupt Enable........ : 0 (disabled)
+ - Threshold #2 Value................... : 0
+ - Threshold #2 Interrupt Enable........ : 0 (disabled)
+ - Power Limit Notification Enable...... : 0 (disabled)
+
+IA32_THERM_STATUS................(0x19C) : 0x88300800
+------------------------------------------
+ - Thermal Status....................... : 0
+ - Thermal Log.......................... : 0
+ - PROCHOT # or FORCEPR# event.......... : 0
+ - PROCHOT # or FORCEPR# log............ : 0
+ - Critical Temperature Status.......... : 0
+ - Critical Temperature log............. : 0
+ - Thermal Threshold #1 Status.......... : 0
+ - Thermal Threshold #1 log............. : 0
+ - Thermal Threshold #2 Status.......... : 0
+ - Thermal Threshold #2 log............. : 0
+ - Power Limitation Status.............. : 0
+ - Power Limitation log................. : 1
+ - Current Limit Status................. : 0
+ - Current Limit log.................... : 0
+ - Cross Domain Limit Status............ : 0
+ - Cross Domain Limit log............... : 0
+ - Digital Readout...................... : 48
+ - Resolution in Degrees Celsius........ : 1
+ - Reading Valid........................ : 1 (valid)
+
+MSR_THERM2_CTL...................(0x19D) : 0x0
+
+IA32_MISC_ENABLES................(0x1A0) : 0x850089
+------------------------------------------
+ - Fast-Strings......................... : 1 (enabled)
+ - FOPCODE compatibility mode Enable.... : 0
+ - Automatic Thermal Control Circuit.... : 1 (enabled)
+ - Split-lock Disable................... : 0
+ - Performance Monitoring............... : 1 (available)
+ - Bus Lock On Cache Line Splits Disable : 0
+ - Hardware prefetch Disable............ : 0
+ - Processor Event Based Sampling....... : 0 (PEBS supported)
+ - GV1/2 legacy Enable.................. : 0
+ - Enhanced Intel SpeedStep Technology.. : 1 (enabled)
+ - MONITOR FSM.......................... : 1 (MONITOR/MWAIT supported)
+ - Adjacent sector prefetch Disable..... : 0
+ - CFG Lock............................. : 0 (MSR not locked)
+ - xTPR Message Disable................. : 1 (disabled)
+
+MSR_TEMPERATURE_TARGET...........(0x1A2) : 0x640000
+------------------------------------------
+ - Turbo Attenuation Units.............. : 0
+ - Temperature Target................... : 100
+ - TCC Activation Offset................ : 0
+
+MSR_MISC_PWR_MGMT................(0x1AA) : 0x400001
+------------------------------------------
+ - EIST Hardware Coordination........... : 1 (hardware coordination disabled)
+ - Energy/Performance Bias support...... : 1
+ - Energy/Performance Bias.............. : 0 (disabled/MSR not visible to software)
+ - Thermal Interrupt Coordination Enable : 1 (thermal interrupt routed to all cores)
+ - SpeedShift Technology Enable......... : 0 (disabled)
+ - SpeedShift Interrupt Coordination.... : 0 (disabled)
+ - SpeedShift Energy Efficient Perf..... : 0 (disabled)
+ - SpeedShift Technology Setup for HWP.. : No (not setup for HWP)
+
+MSR_TURBO_RATIO_LIMIT............(0x1AD) : 0x1717171A
+------------------------------------------
+ - Maximum Ratio Limit for C01.......... : 1A (2600 MHz)
+ - Maximum Ratio Limit for C02.......... : 17 (2300 MHz)
+
+IA32_ENERGY_PERF_BIAS............(0x1B0) : 0x1
+------------------------------------------
+ - Power Policy Preference...............: 1 (highest performance)
+
+MSR_POWER_CTL....................(0x1FC) : 0x4005F
+------------------------------------------
+ - Bi-Directional Processor Hot..........: 1 (enabled)
+ - C1E Enable............................: 1 (enabled)
+
+MSR_RAPL_POWER_UNIT..............(0x606) : 0xA0E03
+------------------------------------------
+ - Power Units.......................... : 3 (1/8 Watt)
+ - Energy Status Units.................. : 14 (61 micro-Joules)
+ - Time Units .......................... : 10 (976.6 micro-Seconds)
+
+MSR_PKG_POWER_LIMIT..............(0x610) : 0x4280C800DD8078
+------------------------------------------
+ - Package Power Limit #1............... : 15 Watt
+ - Enable Power Limit #1................ : 1 (enabled)
+ - Package Clamping Limitation #1....... : 1 (allow going below OS-requested P/T state during Time Window for Power Limit #1)
+ - Time Window for Power Limit #1....... : 110 (163840 milli-Seconds)
+ - Package Power Limit #2............... : 25 Watt
+ - Enable Power Limit #2................ : 1 (enabled)
+ - Package Clamping Limitation #2....... : 0 (disabled)
+ - Time Window for Power Limit #2....... : 33 (10 milli-Seconds)
+ - Lock................................. : 0 (MSR not locked)
+
+MSR_PKG_ENERGY_STATUS............(0x611) : 0x2041768
+------------------------------------------
+ - Total Energy Consumed................ : 2064 Joules (Watt = Joules / seconds)
+
+MSR_PP0_POWER_LIMIT..............(0x638) : 0x0
+
+MSR_PP0_ENERGY_STATUS............(0x639) : 0xC431DC
+------------------------------------------
+ - Total Energy Consumed................ : 784 Joules (Watt = Joules / seconds)
+
+MSR_PP0_POWER_LIMIT..............(0x638) : 0x0
+
+MSR_PP0_ENERGY_STATUS............(0x639) : 0xC4323F
+------------------------------------------
+ - Total Energy Consumed................ : 784 Joules (Watt = Joules / seconds)
+
+MSR_PP1_POWER_LIMIT..............(0x640) : 0x0
+
+MSR_PP1_ENERGY_STATUS............(0x641) : 0xBD223
+------------------------------------------
+ - Total Energy Consumed................ : 47 Joules (Watt = Joules / seconds)
+
+MSR_PP1_POLICY...................(0x642) : 0x18
+------------------------------------------
+ - Priority Level....................... : 24
+
+MSR_CONFIG_TDP_NOMINAL...........(0x648) : 0xD
+MSR_CONFIG_TDP_LEVEL1............(0x649) : 0x8005C
+MSR_CONFIG_TDP_LEVEL2............(0x64a) : 0x1300C8
+MSR_CONFIG_TDP_CONTROL...........(0x64b) : 0x0
+MSR_TURBO_ACTIVATION_RATIO.......(0x64c) : 0x0
+MSR_PKGC3_IRTL...................(0x60a) : 0x8842
+MSR_PKGC6_IRTL...................(0x60b) : 0x8873
+MSR_PKGC7_IRTL...................(0x60c) : 0x8891
+MSR_PKG_C2_RESIDENCY.............(0x60d) : 0xCCB322FC3F
+MSR_PKG_C3_RESIDENCY.............(0x3f8) : 0x0
+MSR_PKG_C2_RESIDENCY.............(0x60d) : 0xCCB322FC3F
+MSR_PKG_C3_RESIDENCY.............(0x3f8) : 0x0
+MSR_PKG_C6_RESIDENCY.............(0x3f9) : 0x0
+MSR_PKG_C7_RESIDENCY.............(0x3fa) : 0x0
+MSR_PKG_C8_RESIDENCY.............(0x630) : 0x0
+MSR_PKG_C9_RESIDENCY.............(0x631) : 0x0
+MSR_PKG_C10_RESIDENCY............(0x632) : 0x0
+MSR_PKG_C8_LATENCY...............(0x633) : 0x0
+MSR_PKG_C9_LATENCY...............(0x634) : 0x0
+MSR_PKG_C10_LATENCY..............(0x635) : 0x0
+
+IA32_TSC_DEADLINE................(0x6E0) : 0x114F70C6181
+
+CPU Ratio Info:
+------------------------------------------
+Base Clock Frequency (BLCK)............. : 100 MHz
+Maximum Efficiency Ratio/Frequency.......:  8 ( 800 MHz)
+Maximum non-Turbo Ratio/Frequency........: 19 (1900 MHz)
+Maximum Turbo Ratio/Frequency............: 26 (2600 MHz)
+
+IGPU Info:
+------------------------------------------
+IGPU Current Frequency...................:  750 MHz
+IGPU Minimum Frequency...................:  200 MHz
+IGPU Maximum Non-Turbo Frequency.........:  200 MHz
+IGPU Maximum Turbo Frequency.............: 1000 MHz
+IGPU Maximum limit.......................: No Limit
+
+P-State ratio * 100 = Frequency in MHz
+------------------------------------------
+CPU C3-Cores [ 0 1 2 3 ]
+CPU C6-Cores [ 0 1 2 3 ]
+CPU C7-Cores [ 0 1 2 3 ]
+CPU P-States [ 21 23 (26) ] iGPU P-States [ (15) ]
+CPU P-States [ (8) 20 21 23 26 ] iGPU P-States [ (15) ]
+CPU P-States [ 8 16 20 21 23 (26) ] iGPU P-States [ (15) ]
+CPU P-States [ 8 16 17 20 21 23 (26) ] iGPU P-States [ (15) ]
+CPU P-States [ 8 (13) 16 17 18 20 21 23 26 ] iGPU P-States [ (15) ]
+CPU P-States [ 8 13 16 17 18 19 20 21 (23) 26 ] iGPU P-States [ (15) ]
+CPU P-States [ (8) 13 15 16 17 18 19 20 21 23 26 ] iGPU P-States [ (15) ]
+CPU P-States [ 8 (13) 15 16 17 18 19 20 21 23 24 26 ] iGPU P-States [ (15) ]
+CPU P-States [ 8 (13) 14 15 16 17 18 19 20 21 23 24 26 ] iGPU P-States [ (15) ]
+CPU P-States [ (8) 13 14 15 16 17 18 19 20 21 22 23 24 26 ] iGPU P-States [ (15) ]
+CPU P-States [ (8) 13 14 15 16 17 18 19 20 21 22 23 24 26 ] iGPU P-States [ 15 (16) ]
+CPU P-States [ 8 13 14 15 16 17 18 19 20 21 22 (23) 24 25 26 ] iGPU P-States [ (15) 16 ]
+CPU P-States [ 8 (13) 14 15 16 17 18 19 20 21 22 23 24 25 26 ] iGPU P-States [ 15 16 (18) ]
+CPU P-States [ (8) 13 14 15 16 17 18 19 20 21 22 23 24 25 26 ] iGPU P-States [ 15 16 18 (19) ]
+CPU P-States [ (8) 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 ] iGPU P-States [ 15 16 18 (19) ]
+CPU P-States [ (8) 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 ] iGPU P-States [ 15 16 (17) 18 19 ]
+CPU P-States [ (8) 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 ] iGPU P-States [ 15 16 17 (18) 19 ]
+CPU P-States [ (8) 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 ] iGPU P-States [ (14) 15 16 17 18 19 ]
+CPU P-States [ (8) 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 ] iGPU P-States [ 14 (15) 16 17 18 19 ]

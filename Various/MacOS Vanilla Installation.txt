@@ -1,0 +1,86 @@
+High Sierra "Vanilla" Installation
+==================================
+
+Generate a random number with Clover Configurator and check it on Apple's Coverage Check website:
+https://checkcoverage.apple.com/us/en/?sn=GENERATEDSERIAL
+
+The following AML files are *no* longer needed as most device IDs are detected directly by High Sierra and newer:
+
+SSDT-GLAN.aml = IntelMausiEthernet support for Intel Corporation Ethernet Controller I218-V [8086:1559]
+SSDT-HDEF.aml = AppleALC support with injected layout ID (alternatively in Clover set boot arguments as "alcid=1")
+SSDT-IGPU.aml = WhateverGreen support for Intel Corporation Haswell HD Audio Controller [8086:0a0c]
+SSDT-IGPU.aml = WhateverGreen support for Intel Corporation Haswell Integrated Graphics Controller [8086:0a26]
+SSDT-IMEI.aml = Vanilla support for Intel Corporation 8 Series HECI Interface [8086:9c3a]
+SSDT-LPCB.aml = Vanilla support for Intel Corporation 8 Series LPC Controller [8086:9c43]
+SSDT-SATA.aml = Vanilla support for Intel Corporation 8 Series SATA Controller [AHCI mode] [8086:9c03]
+SSDT-SBUS.aml = Needed file to add virtual BUS0 and DVL0 devices (vanilla)
+SSDT-USB.aml  = Needed file to inject device properties only
+SSDT-WIFI.aml = Vanilla support only with injected Atheros ID
+
+N.B. The file SSDT-Methods.aml contains fixes for renamed HDEF, EH01, XHC, ARPT.
+
+
+These are the latest files used for High Sierra and above:
+
+SSDT-All-Devices.aml = Manage devices (MCHC) (IMEI) (SBUS) adding device names and models to IORegistry.
+SSDT-All-Methods.aml = Provide fake device ID for (ARPT) and (HDEF) as well as more (EHC1) and (XHC1) port properties.
+SSDT-All-OS-Hack.aml = Improved USB behaviour by adding further Windows versions for ACPI implementation.
+
+
+Minimal Clover UEFI Drivers (x64)
+=================================
+
+ApfsDriverLoader.efi = Recognize and boot from APFS volumes by loading apfs.efi from ApfsContainer located on block device.
+AptioMemoryFix.efi   = Latest driver to fix memory problems on EFI firmware, do not use with OsxAptioFix3Drv.efi.
+DataHubDxe.efi       = DataHub protocol and mandatory for macOS.
+FSInject.efi         = Driver responsible for Clover kext injection into kernelcache.
+SMCHelper.efi        = Restore SMC keys left in NVRAM by FakeSMC (not compatible with VirtualSMC.efi)
+VBoxHfs.efi          = Alternative open source EFI file-system driver for HFS+ partitions.
+
+Abandoned/Replaced:
+OsxAptioFix3Drv.efi  = Alternate driver (v3) to fix memory problems on EFI firmware, do not use with OsxAptioFix2Drv.efi.
+
+Optional:
+EmuVariableUefi.efi  = Support for NVRAM variables needed by macOS if hardware NVRAM is not supported.
+
+
+Clover Settings
+===============
+
+If we are using a CPU-generated SSDT.aml we need to drop the corresponding CPU table(s).
+
+Setting "DropOEM = True" causes the B0D3 (HDAU) device to disappear.
+
+Better drop specific tables like Cpu0Ist, ApIst, Cpu0Cst, ApCst instead.
+
+Alternatively, drop DMAR and MATS signatures but setting "FixHeaders = True" is needed.
+
+More at https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/config.plist-per-hardware/haswell
+
+N.B. The MLB variable in "Rt Variables" of Clover must be the same as "Board Serial Number" in SMBIOS.
+
+N.B. According to https://github.com/acidanthera/WhateverGreen we need the boot argument "-igfxnohdmi" to disable DP to HDMI conversion patches for digital sound.
+
+
+Basic MacOS Kernel Extensions
+=============================
+
+The following drivers are required for Mojave to work properly:
+
+Patcher       = Lilu.kext
+Audio         = AppleALC.kext
+Graphics      = WhateverGreen.kext
+Ethernet      = IntelMausi.kext / IntelMausiEthernet.kext
+SMC           = VirtualSMC.kext
+CPU Monitor   = SMCProcessor.kext
+Super I/O     = SMCSuperIO.kext
+Wireless      = AirportBrcmFixup.kext
+Bluetooth     = BrcmPatchRAM2.kext (Mojave)
+BT Firmware   = BrcmFirmwareRepo.kext (in /L/E/)
+
+Previous kexts used:
+
+SMC           = FakeSMC.kext (by Slice)
+CPU Monitor   = IntelCPUMonitor.kext (by Slice)
+H/W Monitor   = HWMonitorSMC2.app (by Slice)
+USB Ports Fix = USBInjectAll.kext (obsolete due to USBPorts.kext)

@@ -1,0 +1,36 @@
+Intel D54250WYKH BIOS Settings
+==============================
+
+    Press F10 to enter Boot Menu if needed.
+    Press F2 to enter Visual BIOS setup.
+    Press F9 to load defaults.
+
+Required BIOS Settings
+======================
+
+DEVICES  --> "Video Configuration" section      --> Set "IGD Minimum Memory" to 128MB (default is 64MB)
+SECURITY --> "Security Features" section        --> Disable "Intel VT for Directed I/O (VT-d)"
+POWER    --> "Secondary Power Settings" section --> Set "Wake on LAN form S4/S5" to "Stay Off"
+BOOT     --> "UEFI Boot Priority" section       --> Enable "UEFI Boot" (default)
+BOOT     --> "Legacy Boot Priority" section     --> Disable "Legacy Boot" (+)
+BOOT     --> "Boot Configuration" section       --> Enable "Boot USB Devices First"
+
+(+) Legacy boot is required to set the basic start-up monitor resolution and avoid flickering problem on macOS desktop. This could also be related to needing this setting to reduce the "glitch effect" during black boot screen on OS X 10.10 and 10.11 systems, together with special Clover patch.
+
+MAIN     --> "Event Log" section           --> Disable "Event Logging"
+DEVICES  --> "USB Configuration" section   --> Set xHCI Mode "Auto" (*)
+DEVICES  --> "Onboard Devices" section     --> Disable "Enhanced Consumer IR"
+COOLING  --> "CPU Fan Header" section      --> Set "Minimum Duty Cycle" to "20%" for ±1500rpm or "30%" for ±2300rpm
+SECURITY --> "Passwords" section           --> Disable "Hard Disk Drive Password Prompt"
+BOOT     --> "Boot Devices" section        --> Disable "Optical"
+BOOT     --> "Boot Devices" section        --> Disable "Network"
+BOOT     --> "Boot Display Config" section --> Disable "Display F7 to Update BIOS"
+
+(*) Could possibly provide better USB v3.0 support.
+
+Press F10 to save and exit.
+
+CURRENT BIOS:  WYLPT10H.86A.0053.2019.0703.1615
+PREVIOUS BIOS: WYLPT10H.86A.0049.2018.0718.2208
+
+N.B. No Ethernet after wake: If you disable "Wake on LAN" in BIOS, do *not* enable "Wake for Ethernet Network access" in Systen Preferences -> Energy Saver!
