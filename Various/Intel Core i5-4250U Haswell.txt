@@ -1,0 +1,41 @@
+Intel NUC D54250WYKH
+====================
+
+  Sandy Bridge = All Core ix-3xxx (HD Graphics 3000)
+  Ivy Bridge   = All Core ix-3xxx (HD Graphics 4000)
+* Haswell      = All Core ix-4xxx (HD Graphics 4600)
+  Broadwell    = All Core ix-5xxx (Iris Pro Graphics 6200)
+  Skylake      = All Core ix-6xxx (HD Graphics 5xx)
+  Kaby Lake    = All Core ix-7xxx (UHD/Iris Plus Graphics 6xx)
+  Coffee Lake  = All Core ix-8xxx (UHD/Iris Plus Graphics 6xx)
+
+Generation: Wilson Canyon (2013)
+Specifications: https://ark.intel.com/products/81164/Intel-NUC-Kit-D54250WYKH
+Downloads: https://downloadcenter.intel.com/product/81164/Intel-NUC-Kit-D54250WYKH
+
+Generation: Haswell (2013)
+CPU: i5-4250U @ 1.30 GHz up to 2.60 GHz / 2 Cores / 4 Threads
+GPU: Intel HD Graphics 5000 / 200 MHz up to 1.00 GHz
+URL: https://ark.intel.com/products/75028/Intel-Core-i5-4250U-Processor-3M-Cache-up-to-2-60-GHz
+
+Geekbench:
+V4 Scores: https://browser.geekbench.com/v4/cpu/search?q=Core+i5-4250U
+V5 Scores: https://browser.geekbench.com/v5/cpu/search?q=Core+i5-4250U
+
+Mac Model: MacMini7,1
+CPU: i5-4260U @ 1.40 GHz up to 2.70 GHz / 2 Cores / 4 Threads
+GPU: Intel HD Graphics 5000
+Everymac: https://everymac.com/ultimate-mac-lookup/?search_keywords=Macmini7,1
+Board ID: Mac-35C5E08120C7EEAF
+BIOS Revision: MM71.88Z.0220.B00.1409291751
+BIOS Revision: MM71.88Z.0224.B00.1708080033
+BIOS Revision: MM71.88Z.0226.B00.1709290808
+BIOS Revision: MM71.88Z.0232.B00.1806051659
+BIOS Revision: MM71.88Z.0234.B00.1809171422
+BIOS Revision: MM71.88Z.F000.B00.1812201005
+BIOS Revision: MM71.88Z.F000.B00.1902151233
+BIOS Revision: MM71.88Z.F000.B00.2002051745
+BIOS Revision: MM71.88Z.F000.B00.2004161539
+BIOS Revision: MM71.88Z.F000.B00.2012171735
+BIOS Revision: MM71.88Z.F000.B00.2102221743
+BIOS Revision: MM71.88Z.F000.B00.2106131851
