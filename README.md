@@ -82,8 +82,8 @@ For the essential but _required_ BIOS settings, as well as previous firmware rel
 * Analogue audio output works as layout ID `0x01` with [AppleALC](https://github.com/acidanthera/AppleALC/releases/);
 * Digital audio output works right out-of-the-box (using a MiniDP to MiniDP cable);
 * Embedded Intel LAN interface works with [IntelMausi](https://github.com/acidanthera/IntelMausi/releases);
-* Replaced WLAN module works with [BrcmPatchRAM](https://github.com/acidanthera/BrcmPatchRAM/releases);
-* Replaced BTLE module works with [BrcmBluetoothInjector](https://github.com/acidanthera/BrcmPatchRAM/releases);
+* Replaced WLAN module works with [AirportBrcmFixup](https://github.com/acidanthera/AirportBrcmFixup/releases);
+* Replaced BTLE module works with [BrcmPatchRAM](https://github.com/acidanthera/BrcmPatchRAM/releases);
 * CPU fan readings work natively with [VirtualSMC](https://github.com/acidanthera/VirtualSMC/releases);
 * Sleep/Wake both work without issues; see "Power" section in [Hackintool](https://github.com/headkaze/Hackintool/releases);
 * Both mSATA and SSD SATA interfaces work with no effort nor kext needed.

@@ -47,7 +47,7 @@ Most of the configuration keys are set to **false** thus making a minimum needed
 * `_DSM` to `XDSM`
 * `_OSI` to `XOSI` → used in conjunction with **SSDT-XOSI.aml**
 * `B0D3` to `HDAU` → not needed as **AppleALC** can do that, too
-* `EHC1` to `EH01` → used in conjunction with **USBPorts.kext**
+* `EHC1` to `EH01` → not needed as EHCI ports are disabled via **SSDT-EHCI-OFF.aml**
 * `GFX0` to `IGPU` → not needed as **WhateverGreen** can do that, too
 * `GLAN` to `GIGE`
 * `HDAS` to `HDEF` → not needed as **AppleALC** can do that, too
@@ -65,6 +65,6 @@ Adds native vanilla devices such as `Device (MCHC)` and `Device (IMEI)` like a r
 **SSDT-XOSI.aml**<br/>
 Combined with the needed Clover configuration patch (replacing `_OSI` with `XOSI`) this allows to simulate a Windows system running, thus getting increased compatibility in general.
 
-## Note regarding USBPorts.kext generated with Hackintool
+## Note regarding `USBPorts.kext` generated with Hackintool
 
 This NUC has four visible USB ports and they are all USB 3.0 connectors, except the two *internal* headers that are USB 2.0 connectors (and disabled in BIOS). This is why the definition of **USBPorts.kext** has both **HSxx** and **SSPx** ports defined as `<key>UsbConnector</key>` being `<integer>3</integer>` as it reflects the actual *electrical* connector.
