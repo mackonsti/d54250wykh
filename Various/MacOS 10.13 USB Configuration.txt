@@ -1,0 +1,60 @@
+USB Definitions (High Sierra 10.13.6 System)
+============================================
+
+Reference = https://www.insanelymac.com/forum/topic/306777-guide-usb-fix-el-capitan-1011/
+USB v2.0 = /System/Library/Extensions/IOUSBHostFamily????.kext/Contents/PlugIns/AppleUSBEHCIPCI.kext/Contents/Info.plist?
+USB v3.0 = /System/Library/Extensions/IOUSBHostFamily.kext/Contents/PlugIns/AppleUSBXHCIPCI.kext/Contents/Info.plist??
+
+
+AppleUSBEHCIPCI.kext (USB v2.0)
+-------------------------------
+Location: IOUSBHostFamily.kext/Plugins
+
+SMBIOS: Macmini6,1 or Macmini6,2
+================================
+IONameMatch: EHC1
+port-count: 0x01000000 (4 bytes)
+ports: PRT1
+UsbConnector: 0xFF (255)
+port: 0x01000000 (4 bytes)
+
+IONameMatch: EHC2
+port-count: 0x01000000 (4 bytes)
+ports: PRT1
+UsbConnector: 0xFF (255)
+port: 0x01000000 (4 bytes)
+
+
+SMBIOS: Macmini7,1
+==================
+Supported: Intel Corporation 8 Series USB EHCI Controller [8086:9c26]
+IONameMatch: EHC1
+port-count: N/A
+ports: N/A
+UsbConnector: 0xFF (255)
+port: 0x01000000 (4 bytes)
+
+
+AppleUSBXHCIPCI.kext (USB v3.0)
+-------------------------------
+Location: IOUSBHostFamily.kext/Plugins
+
+SMBIOS: Macmini6,1 or Macmini6,2
+================================
+IONameMatch: XHC1
+port-count: 0x08000000 (4 bytes)
+ports: PRT1, PRT2, PRT3, PRT4, PRT5, PRT6, PRT7, PRT8
+UsbConnector: 0x03 (3) for all
+port: 0x01000000 (4 bytes) to 0x08000000 (4 bytes)
+
+
+SMBIOS: Macmini7,1
+==================
+Supported: Intel Corporation 8 Series USB XHCI Controller [8086:9c31]
+IONameMatch: XHC1
+port-count: 0x0D000000 (4 bytes)
+ports: HS01, HS02, HS03, HS04, HS05, HS07, HS08
+ports: SSP1, SSP2, SSP3, SSP4
+UsbConnector: 0x03 (3) for HS01, HS02, HS07, HS08 and SSP1, SSP2, SSP3, SSP4
+UsbConnector: 0xFF (255) for HS03, HS04, HS05
+port: 0x01000000 (4 bytes) to 0x0D000000 (4 bytes)
