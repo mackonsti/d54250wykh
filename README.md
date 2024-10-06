@@ -175,6 +175,8 @@ With the injection of `SSDT-PLUG.aml` we can verify that Power Management is pre
 
 ![PowerGadget](Various/PowerGadget.png)
 
-![Catalina](Various/Catalina.png)
+![Monterey](Various/Monterey.png)
 
 ![Mojave](Various/Mojave.png)
+
+![Catalina](Various/Catalina.png)
