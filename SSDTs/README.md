@@ -1,7 +1,7 @@
 # Actively Used SSDTs
 
 **SSDT-EC-USBX.aml**<br/>
-Despite this being an older computer platform using some mobile components, modern MacOS systems expect the presence of device `EC` in order to boot correctly. This computer does **not** have any similar devices to disable (instead of renaming them) although references to device `H_EC` were found in the decompiled DSDT. Either way, this SSDT patch adds a vanilla `Device (EC)` under the `Device (LPCB)` tree, as well as the needed `Device (USBX)` that injects USB port(s) power supply and limit values, as found on a real Mac.
+Despite this being an older computer platform using some mobile components, modern MacOS systems expect the presence of device `EC` in order to boot correctly. This computer does **not** have any similar devices to disable (instead of renaming them) although references to device `H_EC (PNP0C09)` were found in the decompiled DSDT. Either way, this SSDT patch adds a vanilla `Device (EC)` under the `Device (LPCB)` tree, as well as the needed `Device (USBX)` that injects USB port(s) power supply and limit values, as found on a real Mac.
 
 **SSDT-EHCI-OFF.aml**<br/>
 This SSDT patch is needed to completely disable the EHCI controller (through variables `EH1D` and `EH2D`) so that we only use the XHCI controller that is recognised by modern MacOS systems, for all USB ports.

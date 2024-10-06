@@ -8,7 +8,7 @@
 - [OpenCore Version Installed](#opencore-version-installed)
 - [OpenCore Configuration Files](#opencore-configuration-files)
 - [Notable Configuration Differences](#notable-differences-in-configurations)
-- [OpenCore Main Parameters](#opencore-main-parameters)
+- [Important OpenCore Parameters](#important-opencore-parameters)
 - [Regarding CFG Lock in BIOS](#regarding-cfg-lock-in-bios)
 - [Sleep/Wake Parameters](#sleepwake-parameters)
 
@@ -107,17 +107,18 @@ The assigned value allows or prevents OpenCore from scanning and booting from un
 
 Sets Apple Secure Boot hardware model and policy. Specifying this value defines which operating systems will be bootable. Operating systems shipped before the specified model was released, will not boot. A value `Default` will match the model from the SMBIOS defined in the configuration; a value `Disabled` will match no model and Secure Boot will be disabled.
 
-## OpenCore Main Parameters
+## Important OpenCore Parameters
 
 1. The following **important** OpenCore settings must be considered for the booloader to boot macOS:
 
-* The presence of a fake `EC` device is mandatory → via **SSDT-EC-USBX.aml**
-* Naming PCI device at address `0x00000000` as `MCHC` is mandatory → via **SSDT-NAMES.aml**
-* The UEFI quirk `IgnoreInvalidFlexRatio` must be set as `true` for the booloader to work with MacOS Monterey on this NUC
-* The Broadcom BCM94352 device can be defined as compatible `pci14e4,43a0` thus only neededing **AirportBrcmFixup.kext**
-* The `ProcessorType` in `PlatformInfo` section is set as `1541` (integer) corresponding to `CPU_MODEL_HASWELL (0x0605)`
+* The presence of a fake `EC` device is mandatory for MacOS → via **SSDT-EC-USBX.aml**
+* Naming the PCI device at address `0x00000000` as `MCHC` is mandatory for MacOS → via **SSDT-NAMES.aml**
+* The UEFI quirk `IgnoreInvalidFlexRatio` must be set as `true` for OpenCore to boot MacOS Monterey on this NUC
+* Per [Olarila](https://olarila.com/topic/39810-how-to-enable-wifi-broadcom-bcm4352-on-macos-ventura-sonoma-or-sequoia-hackintosh/) this Broadcom BCM94352 device can be defined as compatible `pci14e4,43a0` for vanilla use of **AirportBrcmFixup.kext**
+* The OpenCore configuration must exhibit the following kext loading sequence for BTLE to work:<br>**BlueToolFixup.kext** → **BrcmFirmwareData.kext** → **BrcmPatchRAM3.kext**
+* The `ProcessorType` in `PlatformInfo` section is set as `1541` (integer) as it corresponds to `CPU_MODEL_HASWELL (0x0605)`
 
-For more information on `CPU_MODEL_HASWELL (AppleProcessorTypeCorei5Type5)` visit [List of CPUs used on Mac Models](https://imacos.top/2023/01/05/mac-cpu).
+For more references on `CPU_MODEL_HASWELL (AppleProcessorTypeCorei5Type5)` visit [List of CPUs used on Mac Models](https://imacos.top/2023/01/05/mac-cpu).
 
 2. The following basic IGPU embedded graphics IDs are injected:
 ```
